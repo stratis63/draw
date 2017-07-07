@@ -31,6 +31,9 @@ module.exports = env => [
       'style-loader',
       'css-loader',
     ],
+    include: [
+      /node_modules/,
+    ],
   },
   {
     test: /\.(png|jpg|jpeg|gif|svg)$/,

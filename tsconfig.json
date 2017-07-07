@@ -1,34 +1,34 @@
 {
-  "compilerOptions": {
-    "target": "es2017",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    // "resolveJsonModule": true,
-    "baseUrl": "./src",
-    // "sourceMap": true, // not needed when assembled with webpack
-    // "watch": true, // not needed when assembled with webpack
-    "pretty": true,
-    "experimentalDecorators": true,
-    "jsx": "react",
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "downlevelIteration": true,
-    "resolveJsonModule": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
-    "lib": [
-      "es2017",
-      "dom",
-      "dom.iterable",
-      "webworker"
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      // "resolveJsonModule": true,
+      "baseUrl": "./src",
+      // "sourceMap": true, // not needed when assembled with webpack
+      // "watch": true, // not needed when assembled with webpack
+      "pretty": true,
+      "experimentalDecorators": true,
+      "jsx": "preserve",
+      "strictNullChecks": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "downlevelIteration": true,
+      "resolveJsonModule": true,
+      "lib": [
+        "es2017",
+        "dom",
+        "dom.iterable",
+        "webworker"
+      ]
+    },
+    "awesomeTypescriptLoaderOptions": {
+      "useBabel": true,
+      "babelCore": "@babel/core"
+      /* ... */
+    },
+    "exclude": [
+      "node_modules"
     ]
-  },
-  "awesomeTypescriptLoaderOptions": {
-    /* ... */
-  },
-  "exclude": [
-    "node_modules"
-  ]
-}
+  }
