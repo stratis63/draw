@@ -12,16 +12,14 @@
           ]
         }
       }
-    ],
-    "@babel/preset-stage-2"
+    ]
   ],
   "plugins": [
     ["@babel/plugin-transform-runtime", {
       "helpers": true,
-      "polyfill": false,
-      "regenerator": true,
-      "moduleName": "@babel/runtime"
+      "regenerator": true
     }],
+    "@babel/plugin-syntax-dynamic-import",
     // "styled-components",
     "lodash"
   ]
