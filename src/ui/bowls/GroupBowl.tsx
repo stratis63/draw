@@ -1,5 +1,7 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import memoizeOne from 'memoize-one'
+import { memoize } from 'lodash'
 
 import getGroupLetter from 'utils/getGroupLetter'
 import Ball from './Ball'
@@ -14,45 +16,38 @@ const Root = styled.div`
   }
 `
 
+type OnPickHandler = (groupNum: number) => void
+
 interface Props {
   completed: boolean,
   possibleGroups: number[] | null,
-  onPick: (groupNum: number) => void,
+  onPick: OnPickHandler,
 }
 
-class GroupBowl extends PureComponent<Props> {
-  private onBallPick = (ev: React.MouseEvent<HTMLDivElement>) => {
-    const ball = ev.target as HTMLDivElement
-    // @ts-ignore
-    const pickedGroup = +ball.dataset.group
-    if (Number.isNaN(pickedGroup)) {
-      console.error('incorrect group ball', ball.dataset.group)
-      throw new Error(`Incorrect group ball`)
-    }
-    this.props.onPick(pickedGroup)
-  }
+const getHandlerUnmemoized = (onPick: OnPickHandler) =>
+  memoize((groupNum: number) => () => {
+    onPick(groupNum)
+  })
 
-  render() {
-    const {
-      completed,
-      possibleGroups,
-    } = this.props
+const getHandler = memoizeOne(getHandlerUnmemoized)
 
-    return (
-      <Root>
-        {!completed && possibleGroups &&
-          possibleGroups.map(groupNum => (
-            <Ball
-              data-group={groupNum}
-              onClick={this.onBallPick}
-            >
-              {getGroupLetter(groupNum)}
-            </Ball>
-          ))
-        }
-      </Root>
-    )
-  }
+const GroupBowl = ({
+  completed,
+  possibleGroups,
+  onPick,
+}: Props) => {
+  const getOnPick = getHandler(onPick)
+  return (
+    <Root>
+      {!completed && possibleGroups &&
+        possibleGroups.map(groupNum => (
+          <Ball onClick={getOnPick(groupNum)}>
+            {getGroupLetter(groupNum)}
+          </Ball>
+        ))
+      }
+    </Root>
+  )
 }
 
 export default GroupBowl

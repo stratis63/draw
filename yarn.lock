@@ -205,6 +205,11 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.121.tgz#9327e20d49b95fc2bf983fc2f045b2c6effc80b9"
   integrity sha512-ORj7IBWj13iYufXt/VXrCNMbUuCTJfhzme5kx9U/UtcIPdJYuvPDUAlHlbNhz/8lKCLy9XGIZnGrqXOtQbPGoQ==
 
+"@types/memoize-one@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@types/memoize-one/-/memoize-one-4.1.0.tgz#62119f26055b3193ae43ca1882c5b29b88b71ece"
+  integrity sha512-cmSgi6JMX/yBwgpVm4GooNWIH+vEeJoa8FAa6ExOhpJbC0Juq32/uYKiKb3VPSqrEA0aOnjvwZanla3O1WZMbw==
+
 "@types/node@*":
   version "11.10.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.10.4.tgz#3f5fc4f0f322805f009e00ab35a2ff3d6b778e42"
@@ -3859,6 +3864,11 @@ memoize-one@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-4.1.0.tgz#a2387c58c03fff27ca390c31b764a79addf3f906"
   integrity sha512-2GApq0yI/b22J2j9rhbrAlsHb0Qcz+7yWxeLG8h+95sl1XPUgeLimQSOdur4Vw7cUhrBHwaUZxWFZueojqNRzA==
+
+memoize-one@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.0.0.tgz#d55007dffefb8de7546659a1722a5d42e128286e"
+  integrity sha512-7g0+ejkOaI9w5x6LvQwmj68kUj6rxROywPSCqmclG/HBacmFnZqhVscQ8kovkn9FBCNJmOz6SY42+jnvZzDWdw==
 
 memory-fs@^0.4.0, memory-fs@^0.4.1, memory-fs@~0.4.1:
   version "0.4.1"
